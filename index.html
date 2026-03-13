@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Climate Change Facts</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+    #fact { font-size: 1.5em; margin-bottom: 20px; }
+    button { padding: 10px 20px; font-size: 1em; }
+  </style>
+</head>
+<body>
+  <h1>🌍 Climate Change Facts</h1>
+  <div id="fact"></div>
+  <button id="nextBtn">Next Fact</button>
+
+  <script>
+    const facts = [
+      "The last eight years were the hottest ever recorded.",
+      "Melting glaciers contribute to rising sea levels worldwide.",
+      "Climate change increases the frequency of extreme weather events.",
+      "Deforestation reduces Earth’s ability to absorb carbon dioxide.",
+      "Switching to renewable energy can drastically cut emissions."
+    ];
+
+    let index = 0;
+    const factDiv = document.getElementById("fact");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function showFact() {
+      if (index < facts.length) {
+        factDiv.textContent = facts[index];
+        index++;
+      } else {
+        factDiv.textContent = "✅ Take action today: reduce waste, plant trees, and support clean energy!";
+        nextBtn.style.display = "none";
+      }
+    }
+
+    nextBtn.addEventListener("click", showFact);
+    showFact(); // show first fact on load
+  </script>
+</body>
+</html>
